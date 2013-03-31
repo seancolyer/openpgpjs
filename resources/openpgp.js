@@ -1,3 +1,5 @@
+(function () {
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -149,6 +151,7 @@ function DSA() {
 	this.verify = verify;
 	// this.generate = generateKey;
 }
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -196,7 +199,8 @@ function Elgamal() {
 	// signing and signature verification using Elgamal is not required by OpenPGP.
 	this.encrypt = encrypt;
 	this.decrypt = decrypt;
-}/*
+}
+/*
  * Copyright (c) 2003-2005  Tom Wu (tjw@cs.Stanford.EDU) 
  * All Rights Reserved.
  *
@@ -784,6 +788,7 @@ BigInteger.prototype.modPowInt = bnModPowInt;
 // "constants"
 BigInteger.ZERO = nbv(0);
 BigInteger.ONE = nbv(1);
+
 
 /*
  * Copyright (c) 2003-2005  Tom Wu (tjw@cs.Stanford.EDU) 
@@ -1499,6 +1504,7 @@ BigInteger.prototype.toMPI = bnToMPI;
 
 // JSBN-specific extension
 BigInteger.prototype.square = bnSquare;
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -1634,6 +1640,7 @@ function RSA() {
 	this.generate = generate;
 	this.keyObject = keyObject;
 }
+
 /**
  * A fast MD5 JavaScript implementation
  * Copyright (c) 2012 Joseph Myers
@@ -1838,6 +1845,7 @@ msw = (x >> 16) + (y >> 16) + (lsw >> 16);
 return (msw << 16) | (lsw & 0xFFFF);
 }
 }
+
 /*
  * CryptoMX Tools
  * Copyright (C) 2004 - 2006 Derek Buitenhuis
@@ -2130,7 +2138,8 @@ function RMDstring(message)
   }  
 
   return retString;  
-}/* A JavaScript implementation of the SHA family of hashes, as defined in FIPS 
+}
+/* A JavaScript implementation of the SHA family of hashes, as defined in FIPS 
  * PUB 180-2 as well as the corresponding HMAC implementation as defined in
  * FIPS PUB 198a
  *
@@ -3351,6 +3360,7 @@ function str_sha512(str) {
 	var shaObj = new jsSHA(str, "ASCII");
 	return shaObj.getHash("SHA-512", "ASCII");
 }
+
 // Modified by Recurity Labs GmbH 
 
 // modified version of http://www.hanewin.net/encrypt/PGdecode.js:
@@ -3635,6 +3645,7 @@ function normal_cfb_decrypt(blockcipherencryptfn, block_size, key, ciphertext, i
 	
 	return plaintext.join('');
 }
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -4053,6 +4064,7 @@ function openpgp_crypto_generateKeyPair(keyType, numBits, passphrase, s2kHash, s
 	}
 	return {privateKey: privKeyPacket, publicKey: publicKeyPacket};
 }
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -4147,6 +4159,7 @@ function openpgp_crypto_symmetricDecrypt(algo, key, data, openpgp_cfb) {
 	}
 	return null;
 }
+
 /* Rijndael (AES) Encryption
  * Copyright 2005 Herbert Hanewinkel, www.haneWIN.de
  * version 1.1, check www.haneWIN.de for the latest version
@@ -4630,6 +4643,7 @@ function AESencrypt(block, ctx)
 
   return unpackBytes(b);
 }
+
 /* Modified by Recurity Labs GmbH 
  * 
  * Originally written by nklein software (nklein.com)
@@ -5023,6 +5037,7 @@ function BFencrypt(block,key) {
 	bf.init(util.str2bin(key));
 	return bf.encrypt_block(block);
 }
+
 
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -5570,6 +5585,7 @@ function openpgp_symenc_cast5() {
 
 };
 
+
 //Paul Tero, July 2001
 //http://www.tero.co.uk/des/
 //
@@ -5776,6 +5792,7 @@ function des_createKeys (key) {
   //return the keys we've created
   return keys;
 } //end of des_createKeys
+
 
 
 /* Modified by Recurity Labs GmbH 
@@ -6079,6 +6096,7 @@ function createTwofish() {
 		finalize: tfsFinal
 	};
 }
+
 
 JXG = {exists: (function(undefined){return function(v){return !(v===undefined || v===null);}})()};
 JXG.decompress = function(str) {return unescape((new JXG.Util.Unzip(JXG.Util.Base64.decodeAsArray(str))).unzip()[0][0]);};
@@ -7306,6 +7324,7 @@ JXG.Util.genUUID = function() {
     return uuid.join('');
 };
 
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 //
@@ -7353,7 +7372,7 @@ function openpgp_config() {
 			keyserver: "keyserver.linux.it" // "pgp.mit.edu:11371"
 	};
 
-	this.versionstring ="OpenPGP.js v.1.20130306";
+	this.versionstring ="OpenPGP.js v0.1.0.20130330";
 	this.commentstring ="http://openpgpjs.org";
 	/**
 	 * reads the config out of the HTML5 local storage
@@ -7387,6 +7406,7 @@ function openpgp_config() {
 	this.read = read;
 	this.write = write;
 }
+
 /* OpenPGP radix-64/base64 string encoding/decoding
  * Copyright 2005 Herbert Hanewinkel, www.haneWIN.de
  * version 1.0, check www.haneWIN.de for the latest version
@@ -7463,6 +7483,7 @@ function r2s(t) {
 	}
 	return r;
 }
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 //
@@ -7706,6 +7727,7 @@ function createcrc24(input) {
   return crc & 0xffffff;
 }
 
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -7845,7 +7867,8 @@ function openpgp_encoding_emsa_pkcs1_decode(algo, data) {
 	i+= j;	
 	if (data.substring(i).length < openpgp_crypto_getHashByteLength(algo)) return -1;
 	return data.substring(i);
-}// GPG4Browsers - An OpenPGP implementation in javascript
+}
+// GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
 // This library is free software; you can redistribute it and/or
@@ -7957,7 +7980,7 @@ function _openpgp () {
 				privateKeys[privateKeys.length] = new openpgp_msg_privatekey();
 				mypos += first_packet.headerLength+first_packet.packetLength;
 				mypos += privateKeys[privateKeyCount].read_nodes(first_packet, input, mypos, l);
-			// other blocks	            
+			// other blocks
 			} else {
 				util.print_error('no block packet found!');
 				return null;
@@ -8088,7 +8111,7 @@ function _openpgp () {
 						l -= (first_packet.packetLength + first_packet.headerLength);
 						messages[messageCount].text = signatureText;
 						messages[messageCount].signature = first_packet;
-				        messageCount++;
+            messageCount++;
 				} else 
 					// Signed Message
 					if (first_packet.tagType == 4) {
@@ -8100,8 +8123,8 @@ function _openpgp () {
 					// Compressed Message
 						mypos += first_packet.packetLength + first_packet.headerLength;
 						l -= (first_packet.packetLength + first_packet.headerLength);
-				        var decompressedText = first_packet.decompress();
-				        messages = messages.concat(openpgp.read_messages_dearmored({text: decompressedText, openpgp: decompressedText}));
+            var decompressedText = first_packet.decompress();
+            messages = messages.concat(openpgp.read_messages_dearmored({text: decompressedText, openpgp: decompressedText}));
 				} else
 					// Marker Packet (Obsolete Literal Packet) (Tag 10)
 					// "Such a packet MUST be ignored when received." see http://tools.ietf.org/html/rfc4880#section-5.8
@@ -8263,8 +8286,9 @@ function _openpgp () {
 		var keyPair = openpgp_crypto_generateKeyPair(keyType,numBits, passphrase, openpgp.config.config.prefer_hash_algorithm, 3);
 		var privKeyString = keyPair.privateKey;
 		var privKeyPacket = new openpgp_packet_keymaterial().read_priv_key(privKeyString.string,3,privKeyString.string.length);
-		if(!privKeyPacket.decryptSecretMPIs(passphrase))
-		    util.print_error('Issue creating key. Unable to read resulting private key');
+		if(!privKeyPacket.decryptSecretMPIs(passphrase)) {
+      util.print_error('Issue creating key. Unable to read resulting private key');
+    }
 		var privKey = new openpgp_msg_privatekey();
 		privKey.privateKeyPacket = privKeyPacket;
 		privKey.getPreferredSignatureHashAlgorithm = function(){return openpgp.config.config.prefer_hash_algorithm};//need to override this to solve catch 22 to generate signature. 8 is value for SHA256
@@ -8295,7 +8319,19 @@ function _openpgp () {
 }
 
 var openpgp = new _openpgp();
-
+/*
+	context.generate_key_pair = openpgp.generate_key_pair;
+	context.write_signed_message = openpgp.write_signed_message; 
+	context.write_signed_and_encrypted_message = openpgp.write_signed_and_encrypted_message;
+	context.write_encrypted_message = openpgp.write_encrypted_message;
+	context.read_message = openpgp.read_message;
+	context.read_messages_dearmored = openpgp.read_messages_dearmored;
+	context.read_publicKey = openpgp.read_publicKey;
+	context.read_privateKey = openpgp.read_privateKey;
+	//Have to call init() within function because of scoping, it uses this.
+  context.init = function(){return openpgp.init();};
+*/
+//this.openpgp = openpgp;
 
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
@@ -8565,6 +8601,7 @@ function openpgp_keyring() {
 	this.removePrivateKey = removePrivateKey;
 
 }
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -8701,6 +8738,7 @@ function openpgp_msg_message() {
 	this.verifySignature = verifySignature;
 	this.toString = toString;
 }
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -8892,6 +8930,7 @@ function openpgp_msg_privatekey() {
 	this.getKeyId = getKeyId;
 	
 }
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -9160,6 +9199,7 @@ function openpgp_msg_publickey() {
 	this.verifyBasicSignatures = verifyBasicSignatures;
 	this.getSubKeyAsKey = getSubKeyAsKey;
 }
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -9323,6 +9363,7 @@ function openpgp_packet_compressed() {
 	this.decompress = decompress;
 	this.write_packet = write_packet;
 };
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -9422,6 +9463,7 @@ function openpgp_packet_encrypteddata() {
 	this.read_packet = read_packet;
 	this.write_packet = write_packet;
 };
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -9576,6 +9618,7 @@ function openpgp_packet_encryptedintegrityprotecteddata() {
 	this.toString = toString;
 	this.decrypt = decrypt;
 };
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -9800,6 +9843,7 @@ function openpgp_packet_encryptedsessionkey() {
 	this.toString = toString;
 	this.decrypt = decrypt;
 };
+
 
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
@@ -10208,6 +10252,7 @@ function _openpgp_packet() {
 }
 
 var openpgp_packet = new _openpgp_packet();
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -11018,6 +11063,7 @@ function openpgp_packet_keymaterial() {
 	this.write_private_key = write_private_key;
 	this.write_public_key = write_public_key;
 }
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -11116,6 +11162,7 @@ function openpgp_packet_literaldata() {
 	this.toString = toString;
 	this.write_packet = write_packet;
 }
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -11180,6 +11227,7 @@ function openpgp_packet_marker() {
 	this.read_packet = read_packet;
 	this.toString = toString;
 }
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -11259,6 +11307,7 @@ function openpgp_packet_modificationdetectioncode() {
 	this.read_packet = read_packet;
 	this.toString = toString;
 };
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -11378,6 +11427,7 @@ function openpgp_packet_onepasssignature() {
 	this.toString = toString;
 	this.write_packet = write_packet;
 };
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -12107,6 +12157,7 @@ function openpgp_packet_signature() {
     this.read_packet = read_packet;
     this.toString = toString;
 }
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -12262,6 +12313,7 @@ function openpgp_packet_userattribute() {
 	this.toString = toString;
 	
 };
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -12598,6 +12650,7 @@ function openpgp_packet_userid() {
 	this.toString = toString;
 	this.read_nodes = read_nodes;
 }
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -12646,6 +12699,7 @@ function openpgp_type_keyid() {
 	this.read_packet = read_packet;
 	this.toString = toString;
 };
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -12778,6 +12832,7 @@ function openpgp_type_mpi() {
 	this.toBin = toBin;
 	this.getByteLength = getByteLength;
 }
+
 
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
@@ -12917,6 +12972,7 @@ function openpgp_type_s2k() {
 	this.write = write;
 	this.produce_key = produce_key;
 }
+
 // GPG4Browsers - An OpenPGP implementation in javascript
 // Copyright (C) 2011 Recurity Labs GmbH
 // 
@@ -13195,3 +13251,15 @@ var Util = function() {
  * an instance that should be used. 
  */
 var util = new Util();
+
+if (typeof define !== 'undefined' && define.amd) {
+  define([], function () {
+    return openpgp;
+  });
+}
+else {
+  this.openpgp = openpgp;
+}
+
+
+}());

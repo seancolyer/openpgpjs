@@ -110,7 +110,7 @@ function _openpgp () {
 				privateKeys[privateKeys.length] = new openpgp_msg_privatekey();
 				mypos += first_packet.headerLength+first_packet.packetLength;
 				mypos += privateKeys[privateKeyCount].read_nodes(first_packet, input, mypos, l);
-			// other blocks	            
+			// other blocks
 			} else {
 				util.print_error('no block packet found!');
 				return null;
@@ -241,7 +241,7 @@ function _openpgp () {
 						l -= (first_packet.packetLength + first_packet.headerLength);
 						messages[messageCount].text = signatureText;
 						messages[messageCount].signature = first_packet;
-				        messageCount++;
+            messageCount++;
 				} else 
 					// Signed Message
 					if (first_packet.tagType == 4) {
@@ -253,8 +253,8 @@ function _openpgp () {
 					// Compressed Message
 						mypos += first_packet.packetLength + first_packet.headerLength;
 						l -= (first_packet.packetLength + first_packet.headerLength);
-				        var decompressedText = first_packet.decompress();
-				        messages = messages.concat(openpgp.read_messages_dearmored({text: decompressedText, openpgp: decompressedText}));
+            var decompressedText = first_packet.decompress();
+            messages = messages.concat(openpgp.read_messages_dearmored({text: decompressedText, openpgp: decompressedText}));
 				} else
 					// Marker Packet (Obsolete Literal Packet) (Tag 10)
 					// "Such a packet MUST be ignored when received." see http://tools.ietf.org/html/rfc4880#section-5.8
@@ -416,8 +416,9 @@ function _openpgp () {
 		var keyPair = openpgp_crypto_generateKeyPair(keyType,numBits, passphrase, openpgp.config.config.prefer_hash_algorithm, 3);
 		var privKeyString = keyPair.privateKey;
 		var privKeyPacket = new openpgp_packet_keymaterial().read_priv_key(privKeyString.string,3,privKeyString.string.length);
-		if(!privKeyPacket.decryptSecretMPIs(passphrase))
-		    util.print_error('Issue creating key. Unable to read resulting private key');
+		if(!privKeyPacket.decryptSecretMPIs(passphrase)) {
+      util.print_error('Issue creating key. Unable to read resulting private key');
+    }
 		var privKey = new openpgp_msg_privatekey();
 		privKey.privateKeyPacket = privKeyPacket;
 		privKey.getPreferredSignatureHashAlgorithm = function(){return openpgp.config.config.prefer_hash_algorithm};//need to override this to solve catch 22 to generate signature. 8 is value for SHA256
@@ -448,5 +449,3 @@ function _openpgp () {
 }
 
 var openpgp = new _openpgp();
-
-

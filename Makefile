@@ -1,6 +1,7 @@
 default: help
 
 help:
+	@echo "This file has been deprecated for building the library and will be removed. Use grunt as replacement."
 	@echo "update         - get latest sources"
 	@echo "minify         - makes JavaScript download and run faster"
 	@echo "lint           - checks JavaScript files for style issues"
@@ -30,6 +31,7 @@ lint:
 	@./scripts/lint.sh
 
 minify:
+	@echo "IMPORTANT: This file has been deprecated for building the library and will be removed. USE GRUNT INSTEAD"
 	@echo See http://code.google.com/closure/compiler/
 	@./scripts/minimize.sh
 
