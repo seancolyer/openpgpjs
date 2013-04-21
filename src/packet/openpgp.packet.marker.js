@@ -27,38 +27,38 @@
  * Such a packet MUST be ignored when received.
  */
 function openpgp_packet_marker() {
-	this.tagType = 10;
-	/**
-	 * parsing function for a literal data packet (tag 10).
-	 * 
-	 * @param {string} input payload of a tag 10 packet
-	 * @param {integer} position
-	 *            position to start reading from the input string
-	 * @param {integer} len
-	 *            length of the packet or the remaining length of
-	 *            input at position
-	 * @return {openpgp_packet_encrypteddata} object representation
-	 */
-	function read_packet(input, position, len) {
-		this.packetLength = 3;
-		if (input[position].charCodeAt() == 0x50 && // P
-				input[position + 1].charCodeAt() == 0x47 && // G
-				input[position + 2].charCodeAt() == 0x50) // P
-			return this;
-		// marker packet does not contain "PGP"
-		return null;
-	}
+  this.tagType = 10;
+  /**
+   * Parsing function for a literal data packet (tag 10).
+   * 
+   * @param {String} input Payload of a tag 10 packet
+   * @param {Integer} position
+   *            Position to start reading from the input string
+   * @param {Integer} len
+   *            Length of the packet or the remaining length of
+   *            input at position
+   * @return {openpgp_packet_encrypteddata} Object representation
+   */
+  function read_packet(input, position, len) {
+    this.packetLength = 3;
+    if (input[position].charCodeAt() == 0x50 && // P
+    input[position + 1].charCodeAt() == 0x47 && // G
+    input[position + 2].charCodeAt() == 0x50) // P
+      return this;
+    // marker packet does not contain "PGP"
+    return null;
+  }
 
-	/**
-	 * Generates Debug output
-	 * 
-	 * @return {string} String which gives some information about the keymaterial
-	 */
-	function toString() {
-		return "5.8.  Marker Packet (Obsolete Literal Packet) (Tag 10)\n"
-				+ "     packet reads: \"PGP\"\n";
-	}
+  /**
+   * Generates Debug output
+   * 
+   * @return {String} String which gives some information about the 
+   * keymaterial
+   */
+  function toString() {
+    return "5.8.  Marker Packet (Obsolete Literal Packet) (Tag 10)\n" + "     packet reads: \"PGP\"\n";
+  }
 
-	this.read_packet = read_packet;
-	this.toString = toString;
+  this.read_packet = read_packet;
+  this.toString = toString;
 }

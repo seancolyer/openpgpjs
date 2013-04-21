@@ -1,12 +1,7 @@
 module.exports = function(grunt) {
 
-  // Project configuration.
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    concat: {
-      js: {
-        src: [
-        "src/intro.js",
+  //Use mainLibraryFiles for things like jsdoc
+  var mainLibraryFiles = [
         "src/ciphers/asymmetric/dsa.js",
         "src/ciphers/asymmetric/elgamal.js",
         "src/ciphers/asymmetric/jsbn.js",
@@ -49,9 +44,21 @@ module.exports = function(grunt) {
         "src/type/openpgp.type.keyid.js",
         "src/type/openpgp.type.mpi.js",
         "src/type/openpgp.type.s2k.js",
-        "src/util/util.js",
-        "src/outro.js"
-        ],
+        "src/util/util.js"
+  ];
+
+  //allLibraryFiles represents the entire project, meant for concatenation/minify
+  var allLibraryFiles = mainLibraryFiles.slice(0);
+  allLibraryFiles.unshift("src/intro.js");
+  allLibraryFiles.push("src/outro.js");
+
+  // Project configuration.
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    concat: {
+      js: {
+        //TODO switch this to allLibraryFiles for modular design. Once that's been figured out better.
+        src: mainLibraryFiles,
         dest: 'resources/openpgp.js'
       }
     },
@@ -75,6 +82,27 @@ module.exports = function(grunt) {
         banner: '/*! OpenPGPjs.org  this is LGPL licensed code, see LICENSE/our website for more information.- v<%= pkg.version %> - ' +
           '<%= grunt.template.today("yyyy-mm-dd") %> */'
       }
+    },
+    jsbeautifier : {
+      files : allLibraryFiles,
+      options : {
+        indent_size: 2,
+        preserve_newlines: true,
+        keep_array_indentation: false,
+        keep_function_indentation: false,
+        wrap_line_length: 120
+      }
+    },
+    jshint : {
+      all : mainLibraryFiles
+    },
+    jsdoc : {
+      dist : {
+        src: mainLibraryFiles,
+        options: {
+          destination: "doc"
+        }
+      }
     }
   });
 
@@ -82,8 +110,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-text-replace');
+  grunt.loadNpmTasks('grunt-jsbeautifier');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-jsdoc');
 
-  // Default task(s).
-  grunt.registerTask('default', ['concat', 'replace', 'uglify']);
-
+  grunt.registerTask('default', 'Build OpenPGP.js', function() {
+    grunt.task.run(['jsbeautifier', 'concat', 'replace', 'uglify']);
+    //TODO jshint is not run because of too many discovered issues, once these are addressed it should autorun
+    grunt.log.ok('Before Submitting a Pull Request please also run `grunt jshint`.');
+  });
+  grunt.registerTask('documentation', ['jsdoc']);
 };

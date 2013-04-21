@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <title>JSDoc: Class: openpgp_packet_encryptedsessionkey</title>
     
-    <script src="http://shjs.sourceforge.net/sh_main.min.js"> </script>
-    <script src="http://shjs.sourceforge.net/lang/sh_javascript.min.js"> </script>
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/node-dark.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
 </head>
 
@@ -53,12 +53,14 @@ decrypt the message.</div>
     
         
 <dt>
-    <h4 class="name" id="openpgp_packet_encryptedsessionkey"><span class="type-signature"></span>new openpgp_packet_encryptedsessionkey</h4>
+    <h4 class="name" id="openpgp_packet_encryptedsessionkey"><span class="type-signature"></span>new openpgp_packet_encryptedsessionkey<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
 <dd>
     
+    
+
     
     
     
@@ -69,30 +71,34 @@ decrypt the message.</div>
 <dl class="details">
     
         
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>openpgp.js, line 1542</li></ul></dd>
-	
     
     
-	
-	
-	
-	
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="openpgp.packet.encryptedsessionkey.js.html">packet/openpgp.packet.encryptedsessionkey.js</a>, line 34
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
 </dl>
 
     
@@ -126,7 +132,7 @@ decrypt the message.</div>
         <dl>
             
 <dt>
-    <h4 class="name" id="decrypt"><span class="type-signature">&lt;inner> </span>decrypt</h4>
+    <h4 class="name" id="decrypt"><span class="type-signature">&lt;inner> </span>decrypt<span class="signature">(msg, key)</span><span class="type-signature"> &rarr; {String}</span></h4>
     
     
 </dt>
@@ -137,6 +143,8 @@ decrypt the message.</div>
         Decrypts the session key (only for public key encrypted session key
 packets (tag 1)
     </div>
+    
+
     
     
     
@@ -172,16 +180,18 @@ packets (tag 1)
             
             <td class="type">
             
-                        <a href="openpgp_msg_message.html">openpgp_msg_message</a>
-                        
-                    
+                
+<span class="param-type"><a href="openpgp_msg_message.html">openpgp_msg_message</a></span>
+
+
+            
             </td>
             
             
             
             
             
-            <td class="description last">the message object (with member encryptedData</td>
+            <td class="description last">The message object (with member encryptedData</td>
         </tr>
 	
 	
@@ -193,16 +203,18 @@ packets (tag 1)
             
             <td class="type">
             
-                        <a href="openpgp_msg_privatekey.html">openpgp_msg_privatekey</a>
-                        
-                    
+                
+<span class="param-type"><a href="openpgp_msg_privatekey.html">openpgp_msg_privatekey</a></span>
+
+
+            
             </td>
             
             
             
             
             
-            <td class="description last">private key with secMPIs unlocked</td>
+            <td class="description last">Private key with secMPIs unlocked</td>
         </tr>
 	
 	
@@ -214,30 +226,34 @@ packets (tag 1)
 <dl class="details">
     
         
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>openpgp.js, line 1673</li></ul></dd>
-	
     
     
-	
-	
-	
-	
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="openpgp.packet.encryptedsessionkey.js.html">packet/openpgp.packet.encryptedsessionkey.js</a>, line 167
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
 </dl>
 
     
@@ -250,9 +266,8 @@ packets (tag 1)
     
             
 <div class="param-desc">
-    the unencrypted session key
+    The unencrypted session key
 </div>
-
 
 
 
@@ -262,8 +277,9 @@ packets (tag 1)
 	</dt>
 	<dd>
 		
-		<span class="param-type">String</span> 
-		
+<span class="param-type">String</span>
+
+
 	</dd>
 </dl>
 
@@ -275,7 +291,7 @@ packets (tag 1)
         
             
 <dt>
-    <h4 class="name" id="read_pub_key_packet"><span class="type-signature">&lt;inner> </span>read_pub_key_packet</h4>
+    <h4 class="name" id="read_pub_key_packet"><span class="type-signature">&lt;inner> </span>read_pub_key_packet<span class="signature">(input, position, len)</span><span class="type-signature"> &rarr; {<a href="openpgp_packet_encrypteddata.html">openpgp_packet_encrypteddata</a>}</span></h4>
     
     
 </dt>
@@ -283,8 +299,10 @@ packets (tag 1)
     
     
     <div class="description">
-        parsing function for a publickey encrypted session key packet (tag 1).
+        Parsing function for a publickey encrypted session key packet (tag 1).
     </div>
+    
+
     
     
     
@@ -320,16 +338,18 @@ packets (tag 1)
             
             <td class="type">
             
-                        string
-                        
-                    
+                
+<span class="param-type">String</span>
+
+
+            
             </td>
             
             
             
             
             
-            <td class="description last">payload of a tag 1 packet</td>
+            <td class="description last">Payload of a tag 1 packet</td>
         </tr>
 	
 	
@@ -341,16 +361,18 @@ packets (tag 1)
             
             <td class="type">
             
-                        integer
-                        
-                    
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
             
             
             
             
             
-            <td class="description last">position to start reading from the input string</td>
+            <td class="description last">Position to start reading from the input string</td>
         </tr>
 	
 	
@@ -362,16 +384,18 @@ packets (tag 1)
             
             <td class="type">
             
-                        integer
-                        
-                    
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
             
             
             
             
             
-            <td class="description last">length of the packet or the remaining length of
+            <td class="description last">Length of the packet or the remaining length of
            input at position</td>
         </tr>
 	
@@ -384,30 +408,34 @@ packets (tag 1)
 <dl class="details">
     
         
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>openpgp.js, line 1553</li></ul></dd>
-	
     
     
-	
-	
-	
-	
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="openpgp.packet.encryptedsessionkey.js.html">packet/openpgp.packet.encryptedsessionkey.js</a>, line 45
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
 </dl>
 
     
@@ -420,9 +448,8 @@ packets (tag 1)
     
             
 <div class="param-desc">
-    object representation
+    Object representation
 </div>
-
 
 
 
@@ -432,8 +459,9 @@ packets (tag 1)
 	</dt>
 	<dd>
 		
-		<span class="param-type">openpgp_packet_encrypteddata</span> 
-		
+<span class="param-type"><a href="openpgp_packet_encrypteddata.html">openpgp_packet_encrypteddata</a></span>
+
+
 	</dd>
 </dl>
 
@@ -445,7 +473,7 @@ packets (tag 1)
         
             
 <dt>
-    <h4 class="name" id="read_symmetric_key_packet"><span class="type-signature">&lt;inner> </span>read_symmetric_key_packet</h4>
+    <h4 class="name" id="read_symmetric_key_packet"><span class="type-signature">&lt;inner> </span>read_symmetric_key_packet<span class="signature">(input, position, len)</span><span class="type-signature"> &rarr; {<a href="openpgp_packet_encrypteddata.html">openpgp_packet_encrypteddata</a>}</span></h4>
     
     
 </dt>
@@ -453,8 +481,10 @@ packets (tag 1)
     
     
     <div class="description">
-        parsing function for a symmetric encrypted session key packet (tag 3).
+        Parsing function for a symmetric encrypted session key packet (tag 3).
     </div>
+    
+
     
     
     
@@ -490,16 +520,18 @@ packets (tag 1)
             
             <td class="type">
             
-                        string
-                        
-                    
+                
+<span class="param-type">String</span>
+
+
+            
             </td>
             
             
             
             
             
-            <td class="description last">payload of a tag 1 packet</td>
+            <td class="description last">Payload of a tag 1 packet</td>
         </tr>
 	
 	
@@ -511,16 +543,18 @@ packets (tag 1)
             
             <td class="type">
             
-                        integer
-                        
-                    
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
             
             
             
             
             
-            <td class="description last">position to start reading from the input string</td>
+            <td class="description last">Position to start reading from the input string</td>
         </tr>
 	
 	
@@ -532,16 +566,18 @@ packets (tag 1)
             
             <td class="type">
             
-                        integer
-                        
-                    
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
             
             
             
             
             
-            <td class="description last">length of the packet or the remaining length of
+            <td class="description last">Length of the packet or the remaining length of
            input at position</td>
         </tr>
 	
@@ -554,30 +590,34 @@ packets (tag 1)
 <dl class="details">
     
         
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>openpgp.js, line 1641</li></ul></dd>
-	
     
     
-	
-	
-	
-	
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="openpgp.packet.encryptedsessionkey.js.html">packet/openpgp.packet.encryptedsessionkey.js</a>, line 135
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
 </dl>
 
     
@@ -590,9 +630,8 @@ packets (tag 1)
     
             
 <div class="param-desc">
-    object representation
+    Object representation
 </div>
-
 
 
 
@@ -602,8 +641,9 @@ packets (tag 1)
 	</dt>
 	<dd>
 		
-		<span class="param-type">openpgp_packet_encrypteddata</span> 
-		
+<span class="param-type"><a href="openpgp_packet_encrypteddata.html">openpgp_packet_encrypteddata</a></span>
+
+
 	</dd>
 </dl>
 
@@ -615,7 +655,7 @@ packets (tag 1)
         
             
 <dt>
-    <h4 class="name" id="toString"><span class="type-signature">&lt;inner> </span>toString</h4>
+    <h4 class="name" id="toString"><span class="type-signature">&lt;inner> </span>toString<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
     
     
 </dt>
@@ -627,6 +667,8 @@ packets (tag 1)
 purposes)
     </div>
     
+
+    
     
     
     
@@ -636,30 +678,34 @@ purposes)
 <dl class="details">
     
         
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>openpgp.js, line 1700</li></ul></dd>
-	
     
     
-	
-	
-	
-	
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="openpgp.packet.encryptedsessionkey.js.html">packet/openpgp.packet.encryptedsessionkey.js</a>, line 194
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
 </dl>
 
     
@@ -672,10 +718,22 @@ purposes)
     
             
 <div class="param-desc">
-    the string containing a openpgp description
+    The string containing a openpgp description
 </div>
 
 
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">String</span>
+
+
+	</dd>
+</dl>
 
         
     
@@ -685,7 +743,7 @@ purposes)
         
             
 <dt>
-    <h4 class="name" id="write_pub_key_packet"><span class="type-signature">&lt;inner> </span>write_pub_key_packet</h4>
+    <h4 class="name" id="write_pub_key_packet"><span class="type-signature">&lt;inner> </span>write_pub_key_packet<span class="signature">(publicKeyId, publicMPIs, pubalgo, symmalgo, sessionkey)</span><span class="type-signature"> &rarr; {String}</span></h4>
     
     
 </dt>
@@ -693,8 +751,10 @@ purposes)
     
     
     <div class="description">
-        create a string representation of a tag 1 packet
+        Create a string representation of a tag 1 packet
     </div>
+    
+
     
     
     
@@ -730,16 +790,18 @@ purposes)
             
             <td class="type">
             
-                        String
-                        
-                    
+                
+<span class="param-type">String</span>
+
+
+            
             </td>
             
             
             
             
             
-            <td class="description last">the public key id corresponding to publicMPIs key as string</td>
+            <td class="description last">The public key id corresponding to publicMPIs key as string</td>
         </tr>
 	
 	
@@ -751,16 +813,18 @@ purposes)
             
             <td class="type">
             
-                        Array[openpgp_type_mpi]
-                        
-                    
+                
+<span class="param-type">openpgp_type_mpi[]</span>
+
+
+            
             </td>
             
             
             
             
             
-            <td class="description last">multiprecision integer objects describing the public key</td>
+            <td class="description last">Multiprecision integer objects describing the public key</td>
         </tr>
 	
 	
@@ -772,16 +836,18 @@ purposes)
             
             <td class="type">
             
-                        integer
-                        
-                    
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
             
             
             
             
             
-            <td class="description last">the corresponding public key algorithm // See RFC4880 9.1</td>
+            <td class="description last">The corresponding public key algorithm // See RFC4880 9.1</td>
         </tr>
 	
 	
@@ -793,17 +859,20 @@ purposes)
             
             <td class="type">
             
-                        integer
-                        
-                    
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
             
             
             
             
             
-            <td class="description last">the symmetric cipher algorithm used to encrypt the data within 
-           an encrypteddatapacket or encryptedintegrityprotecteddatapacket 
+            <td class="description last">The symmetric cipher algorithm used to encrypt the data 
+           within an encrypteddatapacket or encryptedintegrity-
+           protecteddatapacket 
            following this packet //See RFC4880 9.2</td>
         </tr>
 	
@@ -816,16 +885,18 @@ purposes)
             
             <td class="type">
             
-                        String
-                        
-                    
+                
+<span class="param-type">String</span>
+
+
+            
             </td>
             
             
             
             
             
-            <td class="description last">a string of randombytes representing the session key</td>
+            <td class="description last">A string of randombytes representing the session key</td>
         </tr>
 	
 	
@@ -837,30 +908,34 @@ purposes)
 <dl class="details">
     
         
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>openpgp.js, line 1610</li></ul></dd>
-	
     
     
-	
-	
-	
-	
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="openpgp.packet.encryptedsessionkey.js.html">packet/openpgp.packet.encryptedsessionkey.js</a>, line 104
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
 </dl>
 
     
@@ -873,9 +948,8 @@ purposes)
     
             
 <div class="param-desc">
-    the string representation
+    The string representation
 </div>
-
 
 
 
@@ -885,8 +959,9 @@ purposes)
 	</dt>
 	<dd>
 		
-		<span class="param-type">String</span> 
-		
+<span class="param-type">String</span>
+
+
 	</dd>
 </dl>
 
@@ -911,15 +986,15 @@ purposes)
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="JXG.Util.html">Util</a></li><li><a href="_openpgp_packet.html">_openpgp_packet</a></li><li><a href="openpgp.html">openpgp</a></li><li><a href="openpgp_config.html">openpgp_config</a></li><li><a href="openpgp_keyring.html">openpgp_keyring</a></li><li><a href="openpgp_msg_message.html">openpgp_msg_message</a></li><li><a href="openpgp_msg_privatekey.html">openpgp_msg_privatekey</a></li><li><a href="openpgp_msg_publickey.html">openpgp_msg_publickey</a></li><li><a href="openpgp_packet_compressed.html">openpgp_packet_compressed</a></li><li><a href="openpgp_packet_encrypteddata.html">openpgp_packet_encrypteddata</a></li><li><a href="openpgp_packet_encryptedintegrityprotecteddata.html">openpgp_packet_encryptedintegrityprotecteddata</a></li><li><a href="openpgp_packet_encryptedsessionkey.html">openpgp_packet_encryptedsessionkey</a></li><li><a href="openpgp_packet_keymaterial.html">openpgp_packet_keymaterial</a></li><li><a href="openpgp_packet_literaldata.html">openpgp_packet_literaldata</a></li><li><a href="openpgp_packet_marker.html">openpgp_packet_marker</a></li><li><a href="openpgp_packet_modificationdetectioncode.html">openpgp_packet_modificationdetectioncode</a></li><li><a href="openpgp_packet_onepasssignature.html">openpgp_packet_onepasssignature</a></li><li><a href="openpgp_packet_signature.html">openpgp_packet_signature</a></li><li><a href="openpgp_packet_userattribute.html">openpgp_packet_userattribute</a></li><li><a href="openpgp_packet_userid.html">openpgp_packet_userid</a></li><li><a href="openpgp_type_keyid.html">openpgp_type_keyid</a></li><li><a href="openpgp_type_mpi.html">openpgp_type_mpi</a></li><li><a href="openpgp_type_s2k.html">openpgp_type_s2k</a></li></ul><h3>Global</h3><ul><li><a href="global.html#MD5">MD5</a></li><li><a href="global.html#Uint8Array2str">Uint8Array2str</a></li><li><a href="global.html#bin2str">bin2str</a></li><li><a href="global.html#calc_checksum">calc_checksum</a></li><li><a href="global.html#crc_table">crc_table</a></li><li><a href="global.html#getCheckSum">getCheckSum</a></li><li><a href="global.html#getPGPMessageType">getPGPMessageType</a></li><li><a href="global.html#get_hashAlgorithmString">get_hashAlgorithmString</a></li><li><a href="global.html#hash_headers">hash_headers</a></li><li><a href="global.html#hex2bin">hex2bin</a></li><li><a href="global.html#hexidump">hexidump</a></li><li><a href="global.html#hexstrdump">hexstrdump</a></li><li><a href="global.html#openpgp_cfb_decrypt">openpgp_cfb_decrypt</a></li><li><a href="global.html#openpgp_cfb_encrypt">openpgp_cfb_encrypt</a></li><li><a href="global.html#openpgp_cfb_mdc">openpgp_cfb_mdc</a></li><li><a href="global.html#openpgp_crypto_MDCSystemBytes">openpgp_crypto_MDCSystemBytes</a></li><li><a href="global.html#openpgp_crypto_asymetricDecrypt">openpgp_crypto_asymetricDecrypt</a></li><li><a href="global.html#openpgp_crypto_asymetricEncrypt">openpgp_crypto_asymetricEncrypt</a></li><li><a href="global.html#openpgp_crypto_generateKeyPair">openpgp_crypto_generateKeyPair</a></li><li><a href="global.html#openpgp_crypto_generateSessionKey">openpgp_crypto_generateSessionKey</a></li><li><a href="global.html#openpgp_crypto_getHashByteLength">openpgp_crypto_getHashByteLength</a></li><li><a href="global.html#openpgp_crypto_getPrefixRandom">openpgp_crypto_getPrefixRandom</a></li><li><a href="global.html#openpgp_crypto_getPseudoRandom">openpgp_crypto_getPseudoRandom</a></li><li><a href="global.html#openpgp_crypto_getRandomBigInteger">openpgp_crypto_getRandomBigInteger</a></li><li><a href="global.html#openpgp_crypto_getRandomBytes">openpgp_crypto_getRandomBytes</a></li><li><a href="global.html#openpgp_crypto_getSecureRandom">openpgp_crypto_getSecureRandom</a></li><li><a href="global.html#openpgp_crypto_hashData">openpgp_crypto_hashData</a></li><li><a href="global.html#openpgp_crypto_signData">openpgp_crypto_signData</a></li><li><a href="global.html#openpgp_crypto_symmetricDecrypt">openpgp_crypto_symmetricDecrypt</a></li><li><a href="global.html#openpgp_crypto_symmetricEncrypt">openpgp_crypto_symmetricEncrypt</a></li><li><a href="global.html#openpgp_crypto_verifySignature">openpgp_crypto_verifySignature</a></li><li><a href="global.html#openpgp_encoding_armor">openpgp_encoding_armor</a></li><li><a href="global.html#openpgp_encoding_armor_addheader">openpgp_encoding_armor_addheader</a></li><li><a href="global.html#openpgp_encoding_base64_decode">openpgp_encoding_base64_decode</a></li><li><a href="global.html#openpgp_encoding_base64_encode">openpgp_encoding_base64_encode</a></li><li><a href="global.html#openpgp_encoding_deArmor">openpgp_encoding_deArmor</a></li><li><a href="global.html#openpgp_encoding_eme_pkcs1_decode">openpgp_encoding_eme_pkcs1_decode</a></li><li><a href="global.html#openpgp_encoding_eme_pkcs1_encode">openpgp_encoding_eme_pkcs1_encode</a></li><li><a href="global.html#openpgp_encoding_emsa_pkcs1_decode">openpgp_encoding_emsa_pkcs1_decode</a></li><li><a href="global.html#openpgp_encoding_emsa_pkcs1_encode">openpgp_encoding_emsa_pkcs1_encode</a></li><li><a href="global.html#openpgp_encoding_html_encode">openpgp_encoding_html_encode</a></li><li><a href="global.html#print_debug">print_debug</a></li><li><a href="global.html#print_debug_hexstr_dump">print_debug_hexstr_dump</a></li><li><a href="global.html#print_error">print_error</a></li><li><a href="global.html#print_info">print_info</a></li><li><a href="global.html#shiftRight">shiftRight</a></li><li><a href="global.html#str2Uint8Array">str2Uint8Array</a></li><li><a href="global.html#str2bin">str2bin</a></li><li><a href="global.html#util">util</a></li><li><a href="global.html#verifyCheckSum">verifyCheckSum</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="_openpgp_packet.html">_openpgp_packet</a></li><li><a href="JXG.Util.html">Util</a></li><li><a href="openpgp.html">openpgp</a></li><li><a href="openpgp_config.html">openpgp_config</a></li><li><a href="openpgp_keyring.html">openpgp_keyring</a></li><li><a href="openpgp_msg_message.html">openpgp_msg_message</a></li><li><a href="openpgp_msg_privatekey.html">openpgp_msg_privatekey</a></li><li><a href="openpgp_msg_publickey.html">openpgp_msg_publickey</a></li><li><a href="openpgp_packet_compressed.html">openpgp_packet_compressed</a></li><li><a href="openpgp_packet_encrypteddata.html">openpgp_packet_encrypteddata</a></li><li><a href="openpgp_packet_encryptedintegrityprotecteddata.html">openpgp_packet_encryptedintegrityprotecteddata</a></li><li><a href="openpgp_packet_encryptedsessionkey.html">openpgp_packet_encryptedsessionkey</a></li><li><a href="openpgp_packet_keymaterial.html">openpgp_packet_keymaterial</a></li><li><a href="openpgp_packet_literaldata.html">openpgp_packet_literaldata</a></li><li><a href="openpgp_packet_marker.html">openpgp_packet_marker</a></li><li><a href="openpgp_packet_modificationdetectioncode.html">openpgp_packet_modificationdetectioncode</a></li><li><a href="openpgp_packet_onepasssignature.html">openpgp_packet_onepasssignature</a></li><li><a href="openpgp_packet_signature.html">openpgp_packet_signature</a></li><li><a href="openpgp_packet_userattribute.html">openpgp_packet_userattribute</a></li><li><a href="openpgp_packet_userid.html">openpgp_packet_userid</a></li><li><a href="openpgp_type_keyid.html">openpgp_type_keyid</a></li><li><a href="openpgp_type_mpi.html">openpgp_type_mpi</a></li><li><a href="openpgp_type_s2k.html">openpgp_type_s2k</a></li></ul><h3>Global</h3><ul><li><a href="global.html#bin2str">bin2str</a></li><li><a href="global.html#calc_checksum">calc_checksum</a></li><li><a href="global.html#crc_table">crc_table</a></li><li><a href="global.html#decode_utf8">decode_utf8</a></li><li><a href="global.html#encode_utf8">encode_utf8</a></li><li><a href="global.html#get_hashAlgorithmString">get_hashAlgorithmString</a></li><li><a href="global.html#getCheckSum">getCheckSum</a></li><li><a href="global.html#hash_headers">hash_headers</a></li><li><a href="global.html#hex2bin">hex2bin</a></li><li><a href="global.html#hexidump">hexidump</a></li><li><a href="global.html#hexstrdump">hexstrdump</a></li><li><a href="global.html#MD5">MD5</a></li><li><a href="global.html#openpgp_cfb_decrypt">openpgp_cfb_decrypt</a></li><li><a href="global.html#openpgp_cfb_encrypt">openpgp_cfb_encrypt</a></li><li><a href="global.html#openpgp_cfb_mdc">openpgp_cfb_mdc</a></li><li><a href="global.html#openpgp_crypto_asymetricDecrypt">openpgp_crypto_asymetricDecrypt</a></li><li><a href="global.html#openpgp_crypto_asymetricEncrypt">openpgp_crypto_asymetricEncrypt</a></li><li><a href="global.html#openpgp_crypto_generateKeyPair">openpgp_crypto_generateKeyPair</a></li><li><a href="global.html#openpgp_crypto_generateSessionKey">openpgp_crypto_generateSessionKey</a></li><li><a href="global.html#openpgp_crypto_getHashByteLength">openpgp_crypto_getHashByteLength</a></li><li><a href="global.html#openpgp_crypto_getPrefixRandom">openpgp_crypto_getPrefixRandom</a></li><li><a href="global.html#openpgp_crypto_getPseudoRandom">openpgp_crypto_getPseudoRandom</a></li><li><a href="global.html#openpgp_crypto_getRandomBigInteger">openpgp_crypto_getRandomBigInteger</a></li><li><a href="global.html#openpgp_crypto_getRandomBytes">openpgp_crypto_getRandomBytes</a></li><li><a href="global.html#openpgp_crypto_getSecureRandom">openpgp_crypto_getSecureRandom</a></li><li><a href="global.html#openpgp_crypto_hashData">openpgp_crypto_hashData</a></li><li><a href="global.html#openpgp_crypto_MDCSystemBytes">openpgp_crypto_MDCSystemBytes</a></li><li><a href="global.html#openpgp_crypto_signData">openpgp_crypto_signData</a></li><li><a href="global.html#openpgp_crypto_symmetricDecrypt">openpgp_crypto_symmetricDecrypt</a></li><li><a href="global.html#openpgp_crypto_symmetricEncrypt">openpgp_crypto_symmetricEncrypt</a></li><li><a href="global.html#openpgp_crypto_verifySignature">openpgp_crypto_verifySignature</a></li><li><a href="global.html#openpgp_encoding_armor">openpgp_encoding_armor</a></li><li><a href="global.html#openpgp_encoding_armor_addheader">openpgp_encoding_armor_addheader</a></li><li><a href="global.html#openpgp_encoding_base64_decode">openpgp_encoding_base64_decode</a></li><li><a href="global.html#openpgp_encoding_base64_encode">openpgp_encoding_base64_encode</a></li><li><a href="global.html#openpgp_encoding_deArmor">openpgp_encoding_deArmor</a></li><li><a href="global.html#openpgp_encoding_eme_pkcs1_decode">openpgp_encoding_eme_pkcs1_decode</a></li><li><a href="global.html#openpgp_encoding_eme_pkcs1_encode">openpgp_encoding_eme_pkcs1_encode</a></li><li><a href="global.html#openpgp_encoding_emsa_pkcs1_decode">openpgp_encoding_emsa_pkcs1_decode</a></li><li><a href="global.html#openpgp_encoding_emsa_pkcs1_encode">openpgp_encoding_emsa_pkcs1_encode</a></li><li><a href="global.html#openpgp_encoding_get_type">openpgp_encoding_get_type</a></li><li><a href="global.html#openpgp_encoding_html_encode">openpgp_encoding_html_encode</a></li><li><a href="global.html#print_debug">print_debug</a></li><li><a href="global.html#print_debug_hexstr_dump">print_debug_hexstr_dump</a></li><li><a href="global.html#print_error">print_error</a></li><li><a href="global.html#print_info">print_info</a></li><li><a href="global.html#shiftRight">shiftRight</a></li><li><a href="global.html#str2bin">str2bin</a></li><li><a href="global.html#str2Uint8Array">str2Uint8Array</a></li><li><a href="global.html#Uint8Array2str">Uint8Array2str</a></li><li><a href="global.html#util">util</a></li><li><a href="global.html#verifyCheckSum">verifyCheckSum</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3</a> on Tue Sep 11 2012 21:45:27 GMT-0400 (EDT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0-dev</a> on Sun Apr 21 2013 17:54:46 GMT-0400 (EDT)
 </footer>
 
-<script> sh_highlightDocument(); </script>
+<script> prettyPrint(); </script>
 </body>
 </html>

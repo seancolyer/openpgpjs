@@ -1,9 +1,8 @@
 if (typeof define !== 'undefined' && define.amd) {
-  define([], function () {
+  define([], function() {
     return openpgp;
   });
-}
-else {
+} else {
   this.openpgp = openpgp;
 }
 

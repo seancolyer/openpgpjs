@@ -28,52 +28,51 @@
  */
 
 function openpgp_packet_modificationdetectioncode() {
-	this.tagType = 19;
-	this.hash = null;
-	/**
-	 * parsing function for a modification detection code packet (tag 19).
-	 * 
-	 * @param {String} input payload of a tag 19 packet
-	 * @param {Integer} position
-	 *            position to start reading from the input string
-	 * @param {Integer} len
-	 *            length of the packet or the remaining length of
-	 *            input at position
-	 * @return {openpgp_packet_encrypteddata} object representation
-	 */
-	function read_packet(input, position, len) {
-		this.packetLength = len;
+  this.tagType = 19;
+  this.hash = null;
+  /**
+   * parsing function for a modification detection code packet (tag 19).
+   * 
+   * @param {String} input payload of a tag 19 packet
+   * @param {Integer} position
+   *            position to start reading from the input string
+   * @param {Integer} len
+   *            length of the packet or the remaining length of
+   *            input at position
+   * @return {openpgp_packet_encrypteddata} object representation
+   */
+  function read_packet(input, position, len) {
+    this.packetLength = len;
 
-		if (len != 20) {
-			util
-					.print_error("openpgp.packet.modificationdetectioncode.js\n"
-							+ 'invalid length for a modification detection code packet!'
-							+ len);
-			return null;
-		}
-		// - A 20-octet SHA-1 hash of the preceding plaintext data of the
-		// Symmetrically Encrypted Integrity Protected Data packet,
-		// including prefix data, the tag octet, and length octet of the
-		// Modification Detection Code packet.
-		this.hash = input.substring(position, position + 20);
-		return this;
-	}
+    if (len != 20) {
+      util
+        .print_error("openpgp.packet.modificationdetectioncode.js\n" +
+        'invalid length for a modification detection code packet!' + len);
+      return null;
+    }
+    // - A 20-octet SHA-1 hash of the preceding plaintext data of the
+    // Symmetrically Encrypted Integrity Protected Data packet,
+    // including prefix data, the tag octet, and length octet of the
+    // Modification Detection Code packet.
+    this.hash = input.substring(position, position + 20);
+    return this;
+  }
 
-	/*
-	 * this packet is created within the encryptedintegrityprotected packet
-	 * function write_packet(data) { }
-	 */
+  /*
+   * this packet is created within the encryptedintegrityprotected packet
+   * function write_packet(data) { }
+   */
 
-	/**
-	 * generates debug output (pretty print)
-	 * 
-	 * @return {string} String which gives some information about the modification
-	 *         detection code
-	 */
-	function toString() {
-		return '5.14 Modification detection code packet\n' + '    bytes ('
-				+ this.hash.length + '): [' + util.hexstrdump(this.hash) + ']';
-	}
-	this.read_packet = read_packet;
-	this.toString = toString;
+  /**
+   * generates debug output (pretty print)
+   * 
+   * @return {String} String which gives some information about the 
+   * modification detection code
+   */
+  function toString() {
+    return '5.14 Modification detection code packet\n' + '    bytes (' + this.hash.length + '): [' + util.hexstrdump(
+      this.hash) + ']';
+  }
+  this.read_packet = read_packet;
+  this.toString = toString;
 };

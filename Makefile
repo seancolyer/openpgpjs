@@ -8,6 +8,7 @@ help:
 	@echo "test           - runs JavaScript unit tests"
 	@echo "example        - creates a simple example"
 	@echo "ext-chr-gmail  - creates the Google Chrome / Google Mail extension"
+	@echo "documentation  - generates documentation. Requires jsdoc (3.2) in PATH"
 
 update: update-me update-deps
 
@@ -37,3 +38,6 @@ minify:
 
 test:
 	@echo to be implemented
+
+documentation:
+	@jsdoc src -r -d doc
