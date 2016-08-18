@@ -8,7 +8,13 @@
 /**
  * @constructor
  */
-export default function LocalStorage() {}
+export default function LocalStorage() {
+  if (typeof window !== 'undefined' && window.localStorage) {
+    this.storage = window.localStorage;
+  } else {
+    this.storage = new (require('node-localstorage').LocalStorage)(this.node_store);
+  }
+}
 
 /**
  * Reads the config out of the HTML5 local storage

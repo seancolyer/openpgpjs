@@ -5,4 +5,9 @@
 
 'use strict';
 
-export { default } from './config.js';
+import config from './config.js';
+
+import localStorage from './localStorage.js';
+config.localStorage = localStorage;
+
+export default config;
