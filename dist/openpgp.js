@@ -4846,14 +4846,20 @@ exports.default = _config2.default;
 
 'use strict';
 
-/**
- * @constructor
- */
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = LocalStorage;
+
+var _config = require('./config');
+
+var _config2 = _interopRequireDefault(_config);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @constructor
+ */
 function LocalStorage() {
   if (typeof window !== 'undefined' && window.localStorage) {
     this.storage = window.localStorage;
@@ -4868,10 +4874,15 @@ function LocalStorage() {
  * if config is null the default config will be used
  */
 LocalStorage.prototype.read = function () {
-  var raw = window.localStorage.getItem("config");
-  var cf = raw === null ? null : JSON.parse(raw);
+  var raw = window.localStorage.getItem('config');
+  var cf = raw;
+  if (cf !== null) {
+    try {
+      cf = JSON.parse(raw);
+    } catch (e) {}
+  }
   if (cf === null) {
-    this.config = this.default_config;
+    this.config = _config2.default;
     this.write();
   } else {
     this.config = cf;
@@ -4885,7 +4896,7 @@ LocalStorage.prototype.write = function () {
   window.localStorage.setItem("config", JSON.stringify(this.config));
 };
 
-},{"node-localstorage":"node-localstorage"}],12:[function(require,module,exports){
+},{"./config":9,"node-localstorage":"node-localstorage"}],12:[function(require,module,exports){
 // Modified by ProtonTech AG
 
 // Modified by Recurity Labs GmbH

@@ -5,6 +5,8 @@
 
 'use strict';
 
+import config from './config'
+
 /**
  * @constructor
  */
@@ -22,10 +24,18 @@ export default function LocalStorage() {
  * if config is null the default config will be used
  */
 LocalStorage.prototype.read = function () {
-  var raw = window.localStorage.getItem("config");
-  var cf = (raw === null ? null : JSON.parse(raw));
+  const raw = window.localStorage.getItem('config');
+  let cf = raw;
+  if (cf !== null) {
+    try {
+      cf = JSON.parse(raw);
+    }
+    catch (e) {
+
+    }
+  }
   if (cf === null) {
-    this.config = this.default_config;
+    this.config = config;
     this.write();
   } else {
     this.config = cf;
